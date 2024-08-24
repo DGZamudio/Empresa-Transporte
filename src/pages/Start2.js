@@ -6,7 +6,7 @@ const Start2 = () => {
   return (
     <div className="start-container">
       <div className="content">
-        <h1>Bienvenido a la gestion de la empresa de transporte <MdOutlineWavingHand /></h1>
+        <h1>Bienvenido a la gestion de las empresas de transporte <MdOutlineWavingHand /></h1>
         <h3>¿Que necesitas hacer hoy?</h3>
         <div className="row d-flex justify-content-center">
             <div class="flip-card">

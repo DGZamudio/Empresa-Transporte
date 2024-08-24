@@ -7,7 +7,7 @@ const Nav = () => {
     <div className="app-container">
         <nav className="navbar navbar-expand-lg fixed-top bg-light navbar-light">
             <div className="container">
-            <Link to={'/home'} className="navbar-brand"><h2>Empresa Transporte</h2></Link>
+            <Link to={'/'} className="navbar-brand"><h2>Empresa Transporte</h2></Link>
             <button className="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i className="fas fa-bars" />
             </button>
@@ -21,6 +21,9 @@ const Nav = () => {
                 </li>
                 <li className="nav-item ms-3">
                     <Link className="btn btn-dark rounded-5" to={'/login'}>Inicia Sesion</Link>
+                </li>
+                <li className="nav-item ms-3">
+                    <Link className="btn  rounded-5" to={'/register'}>¡Registre su empresa!</Link>
                 </li>
                 </ul>
             </div>

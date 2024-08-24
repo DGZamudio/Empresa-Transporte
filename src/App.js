@@ -6,6 +6,7 @@ import Nav from './pages/Nav'
 import Start2 from './pages/Start2'
 import List from './pages/List'
 import Load from './pages/Load'
+import Register from './pages/Register'
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
         <Route path='/' element={<Nav/>}>
           <Route index element={<Start/>} />          
           <Route path='login' element={<Login/>} />
+          <Route path='register' element={<Register/>} />
           <Route path='home' element={<Start2/>} />
           <Route path='list' element={<List/>} />
-          <Route path='cargadescarga' element={<Load/>} />
+          <Route path='cargadescarga' element={<Load/>} />  
         </Route>
       </Routes>
     </BrowserRouter>

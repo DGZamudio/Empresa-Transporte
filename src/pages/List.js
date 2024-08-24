@@ -30,13 +30,15 @@ const List = () => {
     <div className="start-container">
       <div className="content">
         <div className="d-flex justify-content-between">
-          <table className="table table-striped">
+          <table className="table table-dark table-striped">
             <thead>
               <tr>
                 <th scope="col">Matricula</th>
                 <th scope="col">Capacidad</th>
                 <th scope="col">Consumo de gasolina</th>
                 <th scope="col">Carga actual</th>
+                <th scope="col">Estado</th>
+
               </tr>
             </thead>
             <tbody>
@@ -45,6 +47,14 @@ const List = () => {
                 <td>600kg</td>
                 <td>1g/15km</td>
                 <td>0</td>
+                <td>Ocupado</td>
+              </tr>
+              <tr>
+                <th scope="row">ABC 143</th>
+                <td>620kg</td>
+                <td>1g/15km</td>
+                <td>0</td>
+                <td>Libre</td>
               </tr>
             </tbody>
           </table>

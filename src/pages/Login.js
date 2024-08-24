@@ -32,7 +32,7 @@ const Login = () => {
         <Link to={'/home'}><button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light rounded-5 btn-block mb-4">Inicia sesion</button></Link>
 
         <div class="text-center">
-            <p>No estas registrado <a href="#!" className='link-light link-offset-2 link-underline-opacity-45 link-underline-opacity-100-hover'>¡Registrate!</a></p>
+            <p>No estas registrado <a href="/register" className='link-light link-offset-2 link-underline-opacity-45 link-underline-opacity-100-hover'>¡Registrate!</a></p>
         </div>
         </form>
       </div>
