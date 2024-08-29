@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { FaTruckLoading } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 
 const Load = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -7,14 +8,15 @@ const Load = () => {
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
+  const location = useLocation();
+
+  const { rol } = location.state || {};
+
   return (
     <div className="start-container">
       <div className="content">
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" id="gridCheck" checked={isChecked} onChange={handleCheckboxChange} />
-                <label className="form-check-label" htmlFor="gridCheck">
-                    Check me out
-                </label>
             </div>
             <table className="table table-dark table-striped">
                 <thead>
@@ -43,8 +45,16 @@ const Load = () => {
                     <td>1g/15km</td>
                     <td>0</td>
                     <td>
-                        <button className="btn btn-success"><FaTruckLoading />Carga</button>
-                        <button className="btn btn-danger"><FaTruckLoading />Descarga</button>
+                    {
+                        rol === '1' ? (          
+                            <>           
+                                <button className="btn btn-success"><FaTruckLoading />Carga</button>
+                                <button className="btn btn-danger"><FaTruckLoading />Descarga</button>
+                            </>   
+                        ) : (
+                            <button className="btn btn-success"><FaTruckLoading />Hacer pedido</button>
+                        )
+                    }
                     </td>
                 </tr>
                 </tbody>

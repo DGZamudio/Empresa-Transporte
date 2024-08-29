@@ -1,18 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [pass, setPass] = useState('')
+  const [email,setEmail] = useState('')
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPass(event.target.value);
+  };
+
+  const navigate = useNavigate();
+  const auth = () => {
+    const datos = { rol: email === 'admin@gmail.com' && pass === '12345678' ? '1' : '0' };
+    navigate('/cargadescarga', { state: datos });
+  }
+
   return (
     <div className="start-container">
       <div className="content">
       <form>
         <div data-mdb-input-init class="form-floating mb-4">
-            <input type="email" id="form2Example1" class="form-control text-light bg-transparent border-bottom" placeholder='Correo'/>
+            <input type="email" id="form2Example1" class="form-control text-light bg-transparent border-bottom" placeholder='Correo' onChange={handleEmailChange} />
             <label for="form2Example1">Correo</label>
         </div>
 
         <div data-mdb-input-init class="form-floating mb-4">
-            <input type="password" id="form2Example2" class="text-light form-control bg-transparent border-bottom" placeholder='Contraseña'/>
+            <input type="password" id="form2Example2" class="text-light form-control bg-transparent border-bottom" placeholder='Contraseña' onChange={handlePasswordChange}/>
             <label for="form2Example2" className='bg-transparent'>Contraseña</label>
         </div>
 
@@ -29,7 +46,7 @@ const Login = () => {
             </div>
         </div>
 
-        <Link to={'/home'}><button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light rounded-5 btn-block mb-4">Inicia sesion</button></Link>
+        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light rounded-5 btn-block mb-4" onClick={() => auth()}>Inicia sesion</button>
 
         <div class="text-center">
             <p>No estas registrado <a href="/register" className='link-light link-offset-2 link-underline-opacity-45 link-underline-opacity-100-hover'>¡Registrate!</a></p>
